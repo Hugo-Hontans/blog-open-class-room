@@ -1,0 +1,16 @@
+<li class="container" [ngClass]="{'list-group-item' : true,
+					'list-group-item-success' : post.loveIts > 0,
+					'list-group-item-danger' : post.loveIts < 0}" >
+	<div>
+		<div class="row">
+			<h2 class="col-8">{{ post.title }}</h2>
+			<p class="ladate col-4">{{ post.created_at | date }}</p>
+		</div>
+		<p class="row col-12">{{ post.content }}</p>
+		<div class="row">
+			<button type="button" class="btn btn-success" (click)="ajouteLove()">Love it / {{ post.lovePositif }}</button>
+			<button type="button" class="btn btn-danger" (click)="soustraitLove()">Don't love it / {{ post.loveNegatif }}</button>
+		</div>
+	</div>
+</li>
+
